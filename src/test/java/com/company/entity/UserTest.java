@@ -1,7 +1,9 @@
 package com.company.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
@@ -10,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderTest.class);
+    private static final Logger logger = LogManager.getLogger(OrderTest.class);
 
     @Test
     void testGetIdUser() {
@@ -64,7 +66,7 @@ class UserTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+        User user = new User(6, null, "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setName("Vladimir");
         assertEquals("Vladimir", user.getName());    }
 
@@ -91,7 +93,7 @@ class UserTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "Boris", "", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+        User user = new User(6, "Boris", null, "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setSurname("Zelenskiy");
         assertEquals("Zelenskiy", user.getSurname());    }
 
@@ -118,7 +120,7 @@ class UserTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "Boris", "Johnson", "", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+        User user = new User(6, "Boris", "Johnson", null, "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setLogin("zelya1978");
         assertEquals("zelya1978", user.getLogin());    }
 
@@ -163,7 +165,7 @@ class UserTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "Boris", "Johnson", "borya1964", "Online", "", "2019-07-24 12:00:00", 57);
+        User user = new User(6, "Boris", "Johnson", "borya1964", "Online", null, "2019-07-24 12:00:00", 57);
         user.setRegistrationDateTime("1978-01-25 00:00:00");
         assertEquals("1978-01-25 00:00:00", user.getRegistrationDateTime());    }
 

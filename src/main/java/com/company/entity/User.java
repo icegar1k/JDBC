@@ -36,14 +36,29 @@ public class User
         this.indexOfProductsPurchased = indexOfProductsPurchased;
     }
 
+    public User(String name,
+                String surname,
+                String login,
+                String status,
+                String registrationDateTime,
+                String lastOrderDateTime,
+                int indexOfProductsPurchased) {
+
+        this.name = name;
+        this.surname = surname;
+        this.login = login;
+        this.status = status;
+        this.registrationDateTime = registrationDateTime;
+        this.lastOrderDateTime = lastOrderDateTime;
+        this.indexOfProductsPurchased = indexOfProductsPurchased;
+    }
+
     public int getIdUser() {
         return idUser;
     }
 
     public void setIdUser(int idUser) {
-        if (this.idUser == 0) {
             this.idUser = idUser;
-        }
     }
 
     public String getName() {
@@ -51,9 +66,7 @@ public class User
     }
 
     public void setName(String name) {
-        if (this.name == null) {
             this.name = name;
-        }
     }
 
     public String getSurname() {
@@ -61,9 +74,7 @@ public class User
     }
 
     public void setSurname(String surname) {
-        if (this.surname == null) {
             this.surname = surname;
-        }
     }
 
     public String getLogin() {
@@ -71,9 +82,7 @@ public class User
     }
 
     public void setLogin(String login) {
-        if (this.login == null) {
             this.login = login;
-        }
     }
 
     public String getStatus() {
@@ -89,9 +98,7 @@ public class User
     }
 
     public void setRegistrationDateTime(String registrationDateTime) {
-        if (this.registrationDateTime == null) {
             this.registrationDateTime = registrationDateTime;
-        }
     }
 
     public String getLastOrderDateTime() {
@@ -115,7 +122,7 @@ public class User
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return idUser == user.idUser && indexOfProductsPurchased == user.indexOfProductsPurchased && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(login, user.login) && Objects.equals(status, user.status) && Objects.equals(registrationDateTime, user.registrationDateTime) && Objects.equals(lastOrderDateTime, user.lastOrderDateTime);
+        return indexOfProductsPurchased == user.indexOfProductsPurchased && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(login, user.login) && Objects.equals(status, user.status) && Objects.equals(registrationDateTime, user.registrationDateTime) && Objects.equals(lastOrderDateTime, user.lastOrderDateTime);
     }
 
     @Override

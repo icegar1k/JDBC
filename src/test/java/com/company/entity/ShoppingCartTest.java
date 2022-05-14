@@ -1,7 +1,9 @@
 package com.company.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
@@ -10,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShoppingCartTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderTest.class);
+    private static final Logger logger = LogManager.getLogger(OrderTest.class);
 
     @Test
     void getIdShoppingCart() {
@@ -123,7 +125,7 @@ class ShoppingCartTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "", "ABC006", 10656, 6, 63936);
+        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, null, "ABC006", 10656, 6, 63936);
         shoppingCart.setName("Fender CD-60 V3 WN SUNBURST");
         assertEquals("Fender CD-60 V3 WN SUNBURST", shoppingCart.getName());
     }
@@ -152,7 +154,7 @@ class ShoppingCartTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "", 10656, 6, 63936);
+        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", null, 10656, 6, 63936);
         shoppingCart.setCode("ABC001");
         assertEquals("ABC001", shoppingCart.getCode());
     }

@@ -25,14 +25,23 @@ public class Product {
         this.cost = cost;
     }
 
+    public Product(String name,
+                   String model,
+                   String description,
+                   int cost) {
+
+        this.name = name;
+        this.model = model;
+        this.description = description;
+        this.cost = cost;
+    }
+
     public int getIdProduct() {
         return idProduct;
     }
 
     public void setIdProduct(int idProduct) {
-        if (this.idProduct == 0) {
             this.idProduct = idProduct;
-        }
     }
 
     public String getName() {
@@ -40,9 +49,7 @@ public class Product {
     }
 
     public void setName(String name) {
-        if (this.name == null) {
             this.name = name;
-        }
     }
 
     public String getModel() {
@@ -50,9 +57,7 @@ public class Product {
     }
 
     public void setModel(String model) {
-        if (this.model == null) {
             this.model = model;
-        }
     }
 
     public String getDescription() {
@@ -76,7 +81,7 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return idProduct == product.idProduct && cost == product.cost && Objects.equals(name, product.name) && Objects.equals(model, product.model) && Objects.equals(description, product.description);
+        return cost == product.cost && Objects.equals(name, product.name) && Objects.equals(model, product.model) && Objects.equals(description, product.description);
     }
 
     @Override

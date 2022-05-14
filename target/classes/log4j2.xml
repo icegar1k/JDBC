@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" strict="true" name="XMLConfigTest"
+               packages="org.apache.logging.log4j.test">
+<!--    Appenders - это регистраторы твоих логов,
+в них ты указываешь куда записывать твои логи(файл, консоль, база данных) и в каком виде. В данном случае их 2  -->
+    <Appenders>
+        <!--    Routing - обязателен  -->
+        <Routing name="MyRoutingAppender">
+            <Routes pattern="$${marker:}">
+                <Route>
+                    <!--  Описываем логирование в файл  -->
+                    <File
+                            fileName="logs/logsForGarik.Log"
+                            name="logs">
+                        <!--  Описываем в каком виде логи будут выведены  -->
+                        <PatternLayout>
+                            <Pattern>[%date{ISO8601}][%-5level][%t] %m%n</Pattern>
+                        </PatternLayout>
+                    </File>
+                </Route>
+            </Routes>
+        </Routing>
+        <!--  Второй логер  -->
+        <Appender type="Console" name="SYSTEM_OUT">
+            <Layout type="PatternLayout" pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level - %msg%n"/>
+        </Appender>
+    </Appenders>
+
+    <!--  Регистрация логеров, какого уровня логи и куда мы будем принимать  -->
+    <Loggers>
+        <!--  Root обязателен  -->
+        <Root level="info">
+            <AppenderRef ref="SYSTEM_OUT"/>
+            <AppenderRef ref="MyRoutingAppender"/>
+        </Root>
+    </Loggers>
+
+    <!--  Итого у нас есть два Appenders, один будет записывать наши логеры в файл, другой выводит в консоль.
+      В разделе самих логеров мы указываем, что логи уровня "info" будут использовать оба Appenders,
+      то есть выводиться и в файл и в консоль-->
+
+</Configuration>

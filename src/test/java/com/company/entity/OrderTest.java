@@ -1,7 +1,9 @@
 package com.company.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
@@ -10,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class OrderTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderTest.class);
+    private static final Logger logger = LogManager.getLogger(OrderTest.class);
 
     @Test
     void testGetIdOrder() {
@@ -20,6 +22,7 @@ class OrderTest {
 //        String workingDir = System.getProperty("user.dir");
 //        System.out.println(workingDir);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+        logger.info("new Order created: {}", order);
         assertEquals(6, order.getIdOrder());
     }
 
@@ -154,7 +157,7 @@ class OrderTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 6, 6, "", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+        Order order = new Order(6, 6, 6, 6, null, "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setDateTime("2022-04-09 03:25:00");
         assertEquals("2022-04-09 03:25:00", order.getDateTime());
     }
@@ -183,7 +186,7 @@ class OrderTest {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "", 10000, "Rejected", "Hello, Moto!");
+        Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", null, 10000, "Rejected", "Hello, Moto!");
         order.setDeliveryAddress("Odessa, Primorskiy");
         assertEquals("Odessa, Primorskiy", order.getDeliveryAddress());
     }

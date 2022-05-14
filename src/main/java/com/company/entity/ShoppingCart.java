@@ -34,14 +34,29 @@ public class ShoppingCart {
         this.amount = amount;
     }
 
+    public ShoppingCart(int idUser,
+                        int idProduct,
+                        String name,
+                        String code,
+                        int price,
+                        int quantity,
+                        int amount) {
+
+        this.idUser = idUser;
+        this.idProduct = idProduct;
+        this.name = name;
+        this.code = code;
+        this.price = price;
+        this.quantity = quantity;
+        this.amount = amount;
+    }
+
     public int getIdShoppingCart() {
         return idShoppingCart;
     }
 
     public void setIdShoppingCart(int idShoppingCart) {
-        if (this.idShoppingCart == 0) {
             this.idShoppingCart = idShoppingCart;
-        }
     }
 
     public int getIdUser() {
@@ -49,9 +64,7 @@ public class ShoppingCart {
     }
 
     public void setIdUser(int idUser) {
-        if (this.idUser == 0) {
             this.idUser = idUser;
-        }
     }
 
     public int getIdProduct() {
@@ -59,9 +72,7 @@ public class ShoppingCart {
     }
 
     public void setIdProduct(int idProduct) {
-        if (this.idProduct == 0) {
             this.idProduct = idProduct;
-        }
     }
 
     public String getName() {
@@ -69,9 +80,7 @@ public class ShoppingCart {
     }
 
     public void setName(String name) {
-        if (this.name == null) {
-            this.name = name;
-        }
+        this.name = name;
     }
 
     public String getCode() {
@@ -79,9 +88,7 @@ public class ShoppingCart {
     }
 
     public void setCode(String code) {
-        if (this.code == null) {
             this.code = code;
-        }
     }
 
     public int getPrice() {
@@ -89,9 +96,7 @@ public class ShoppingCart {
     }
 
     public void setPrice(int price) {
-        if (this.price == 0) {
             this.price = price;
-        }
     }
 
     public int getQuantity() {
@@ -99,9 +104,7 @@ public class ShoppingCart {
     }
 
     public void setQuantity(int quantity) {
-        if (this.quantity == 0) {
             this.quantity = quantity;
-        }
     }
 
     public int getAmount() {
@@ -109,9 +112,7 @@ public class ShoppingCart {
     }
 
     public void setAmount(int amount) {
-        if (this.amount == 0) {
             this.amount = amount;
-        }
     }
 
     @Override
@@ -119,7 +120,7 @@ public class ShoppingCart {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ShoppingCart that = (ShoppingCart) o;
-        return idShoppingCart == that.idShoppingCart && idUser == that.idUser && idProduct == that.idProduct && price == that.price && quantity == that.quantity && amount == that.amount && Objects.equals(name, that.name) && Objects.equals(code, that.code);
+        return idUser == that.idUser && idProduct == that.idProduct && price == that.price && quantity == that.quantity && amount == that.amount && Objects.equals(name, that.name) && Objects.equals(code, that.code);
     }
 
     @Override

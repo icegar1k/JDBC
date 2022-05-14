@@ -3,10 +3,13 @@ package com.company.dao.user;
 import com.company.dao.DBWorker;
 import com.company.dao.order.DAOOrderImpl;
 import com.company.entity.User;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.LogManager;
+//import org.slf4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +17,38 @@ public class DAOUserImpl extends DBWorker implements DAOUser {
 
     private Connection connection = getConnection();
 
-    private static final Logger logger = LoggerFactory.getLogger(DAOUserImpl.class);
+    private static final Logger logger = LogManager.getLogger(DAOUserImpl.class);
+
+    @Override
+    public void addUser(User user) {
+
+        PreparedStatement preparedStatement = null;
+
+        String sql = "INSERT INTO USER (idUser, name, surname, login, status, registrationDateTime, lastOrderDateTime, indexOfProductsPurchased) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+            preparedStatement.setInt(1, user.getIdUser());
+            preparedStatement.setString(2, user.getName());
+            preparedStatement.setString(3, user.getSurname());
+            preparedStatement.setString(4, user.getLogin());
+            preparedStatement.setString(5, user.getStatus());
+            preparedStatement.setString(6, user.getRegistrationDateTime());
+            preparedStatement.setString(7, user.getLastOrderDateTime());
+            preparedStatement.setInt(8, user.getIndexOfProductsPurchased());
+
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException e)
+        {
+            logger.info(e.getMessage(),e);
+            e.printStackTrace();
+        }
+
+        LocalDateTime dt1 = LocalDateTime.now();
+        LocalDateTime dt2 = LocalDateTime.now();
+        logger.info("TEST {} {}", dt1, dt2);
+    }
 
     @Override
     public List<User> getAllUsers() {
@@ -48,9 +82,13 @@ public class DAOUserImpl extends DBWorker implements DAOUser {
         }
         catch (SQLException e)
         {
-            logger.error(e.getMessage(),e);
+            logger.info(e.getMessage(),e);
             e.printStackTrace();
         }
+
+        LocalDateTime dt1 = LocalDateTime.now();
+        LocalDateTime dt2 = LocalDateTime.now();
+        logger.info("TEST {} {}", dt1, dt2);
 
         return users;
     }
@@ -79,18 +117,22 @@ public class DAOUserImpl extends DBWorker implements DAOUser {
         }
         catch (SQLException e)
         {
-            logger.error(e.getMessage(),e);
+            logger.info(e.getMessage(),e);
             e.printStackTrace();
         }
+
+        LocalDateTime dt1 = LocalDateTime.now();
+        LocalDateTime dt2 = LocalDateTime.now();
+        logger.info("TEST {} {}", dt1, dt2);
+
         return user;
     }
 
     @Override
-    public void addUser(User user) {
-
+    public void updateUser(User user) {
         PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO USER (idUser, name, surname, login, status, registrationDateTime, lastOrderDateTime, indexOfProductsPurchased) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "UPDATE USER SET name=?, surname=?, login=?, status=?, registrationDateTime=?, lastOrderDateTime=?, indexOfProductsPurchased=? WHERE idUser=?";
 
         try {
             preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
@@ -107,9 +149,13 @@ public class DAOUserImpl extends DBWorker implements DAOUser {
         }
         catch (SQLException e)
         {
-            logger.error(e.getMessage(),e);
+            logger.info(e.getMessage(),e);
             e.printStackTrace();
         }
+
+        LocalDateTime dt1 = LocalDateTime.now();
+        LocalDateTime dt2 = LocalDateTime.now();
+        logger.info("TEST {} {}", dt1, dt2);
     }
 
     @Override
@@ -126,33 +172,12 @@ public class DAOUserImpl extends DBWorker implements DAOUser {
         }
         catch (SQLException e)
         {
-            logger.error(e.getMessage(),e);
+            logger.info(e.getMessage(),e);
             e.printStackTrace();
         }
-    }
 
-    @Override
-    public void update(User user) {
-        PreparedStatement preparedStatement = null;
-
-        String sql = "UPDATE USER SET name=?, surname=?, login=?, status=?, registrationDateTime=?, lastOrderDateTime=?, indexOfProductsPurchased=? WHERE idUser=?";
-
-        try {
-            preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
-            preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2, user.getSurname());
-            preparedStatement.setString(3, user.getLogin());
-            preparedStatement.setString(4, user.getStatus());
-            preparedStatement.setString(5, user.getRegistrationDateTime());
-            preparedStatement.setString(6, user.getLastOrderDateTime());
-            preparedStatement.setInt(7, user.getIndexOfProductsPurchased());
-
-            preparedStatement.executeUpdate();
-        }
-        catch (SQLException e)
-        {
-            logger.error(e.getMessage(),e);
-            e.printStackTrace();
-        }
+        LocalDateTime dt1 = LocalDateTime.now();
+        LocalDateTime dt2 = LocalDateTime.now();
+        logger.info("TEST {} {}", dt1, dt2);
     }
 }
