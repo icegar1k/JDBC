@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 //import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
@@ -30,18 +30,18 @@ class UserTest {
         logger.info("TEST {} {}", dt1, dt2);
         User user = new User(6, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setIdUser(1);
-        assertEquals(6, user.getIdUser());
-    }
-
-    @Test
-    void testSetIdUserIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(0, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
-        user.setIdUser(1);
         assertEquals(1, user.getIdUser());
     }
+
+//    @Test
+//    void testSetIdUserIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        User user = new User(0, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+//        user.setIdUser(1);
+//        assertEquals(1, user.getIdUser());
+//    }
 
     @Test
     void testGetName() {
@@ -59,16 +59,16 @@ class UserTest {
         logger.info("TEST {} {}", dt1, dt2);
         User user = new User(6, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setName("Vladimir");
-        assertEquals("Boris", user.getName());    }
-
-    @Test
-    void testSetNameIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, null, "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
-        user.setName("Vladimir");
         assertEquals("Vladimir", user.getName());    }
+
+//    @Test
+//    void testSetNameIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        User user = new User(6, null, "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+//        user.setName("Vladimir");
+//        assertEquals("Vladimir", user.getName());    }
 
     @Test
     void testGetSurname() {
@@ -86,16 +86,16 @@ class UserTest {
         logger.info("TEST {} {}", dt1, dt2);
         User user = new User(6, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setSurname("Zelenskiy");
-        assertEquals("Johnson", user.getSurname());    }
-
-    @Test
-    void testSetSurnameIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "Boris", null, "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
-        user.setSurname("Zelenskiy");
         assertEquals("Zelenskiy", user.getSurname());    }
+
+//    @Test
+//    void testSetSurnameIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        User user = new User(6, "Boris", null, "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+//        user.setSurname("Zelenskiy");
+//        assertEquals("Zelenskiy", user.getSurname());    }
 
     @Test
     void testGetLogin() {
@@ -113,16 +113,16 @@ class UserTest {
         logger.info("TEST {} {}", dt1, dt2);
         User user = new User(6, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setLogin("zelya1978");
-        assertEquals("borya1964", user.getLogin());    }
-
-    @Test
-    void testSetLoginIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "Boris", "Johnson", null, "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
-        user.setLogin("zelya1978");
         assertEquals("zelya1978", user.getLogin());    }
+
+//    @Test
+//    void testSetLoginIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        User user = new User(6, "Boris", "Johnson", null, "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
+//        user.setLogin("zelya1978");
+//        assertEquals("zelya1978", user.getLogin());    }
 
     @Test
     void testGetStatus() {
@@ -158,16 +158,16 @@ class UserTest {
         logger.info("TEST {} {}", dt1, dt2);
         User user = new User(6, "Boris", "Johnson", "borya1964", "Online", "1964-06-19 00:00:00", "2019-07-24 12:00:00", 57);
         user.setRegistrationDateTime("1978-01-25 00:00:00");
-        assertEquals("1964-06-19 00:00:00", user.getRegistrationDateTime());    }
-
-    @Test
-    void testSetRegistrationDateTimeIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        User user = new User(6, "Boris", "Johnson", "borya1964", "Online", null, "2019-07-24 12:00:00", 57);
-        user.setRegistrationDateTime("1978-01-25 00:00:00");
         assertEquals("1978-01-25 00:00:00", user.getRegistrationDateTime());    }
+
+//    @Test
+//    void testSetRegistrationDateTimeIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        User user = new User(6, "Boris", "Johnson", "borya1964", "Online", null, "2019-07-24 12:00:00", 57);
+//        user.setRegistrationDateTime("1978-01-25 00:00:00");
+//        assertEquals("1978-01-25 00:00:00", user.getRegistrationDateTime());    }
 
     @Test
     void testGetLastOrderDateTime() {
@@ -205,15 +205,15 @@ class UserTest {
         user.setIndexOfProductsPurchased(100500);
         assertEquals(100500, user.getIndexOfProductsPurchased());    }
 
-    @Test
-    void testEquals() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testToString() {
-    }
+//    @Test
+//    void testEquals() {
+//    }
+//
+//    @Test
+//    void testHashCode() {
+//    }
+//
+//    @Test
+//    void testToString() {
+//    }
 }

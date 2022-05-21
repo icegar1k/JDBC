@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 //import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
@@ -30,18 +30,18 @@ class ProductTest {
         logger.info("TEST {} {}", dt1, dt2);
         Product product = new Product(6, "Ibanez", "GRGR221PA AQB", "Electric", 10656);
         product.setIdProduct(1);
-        assertEquals(6, product.getIdProduct());
-    }
-
-    @Test
-    void testSetIdProductIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Product product = new Product(0, "Ibanez", "GRGR221PA AQB", "Electric", 10656);
-        product.setIdProduct(1);
         assertEquals(1, product.getIdProduct());
     }
+
+//    @Test
+//    void testSetIdProductIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Product product = new Product(0, "Ibanez", "GRGR221PA AQB", "Electric", 10656);
+//        product.setIdProduct(1);
+//        assertEquals(1, product.getIdProduct());
+//    }
 
     @Test
     void testGetName() {
@@ -59,18 +59,18 @@ class ProductTest {
         logger.info("TEST {} {}", dt1, dt2);
         Product product = new Product(6, "Ibanez", "GRGR221PA AQB", "Electric", 10656);
         product.setName("Fender");
-        assertEquals("Ibanez", product.getName());
-    }
-
-    @Test
-    void testSetNameIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Product product = new Product(6, null, "GRGR221PA AQB", "Electric", 10656);
-        product.setName("Fender");
         assertEquals("Fender", product.getName());
     }
+
+//    @Test
+//    void testSetNameIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Product product = new Product(6, null, "GRGR221PA AQB", "Electric", 10656);
+//        product.setName("Fender");
+//        assertEquals("Fender", product.getName());
+//    }
 
     @Test
     void testGetModel() {
@@ -88,18 +88,18 @@ class ProductTest {
         logger.info("TEST {} {}", dt1, dt2);
         Product product = new Product(6, "Ibanez", "GRGR221PA AQB", "Electric", 10656);
         product.setModel("CD-60 V3 WN SUNBURST");
-        assertEquals("GRGR221PA AQB", product.getModel());
-    }
-
-    @Test
-    void testSetModelIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Product product = new Product(6, "Ibanez", null, "Electric", 10656);
-        product.setModel("CD-60 V3 WN SUNBURST");
         assertEquals("CD-60 V3 WN SUNBURST", product.getModel());
     }
+
+//    @Test
+//    void testSetModelIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Product product = new Product(6, "Ibanez", null, "Electric", 10656);
+//        product.setModel("CD-60 V3 WN SUNBURST");
+//        assertEquals("CD-60 V3 WN SUNBURST", product.getModel());
+//    }
 
     @Test
     void testGetDescription() {
@@ -139,15 +139,15 @@ class ProductTest {
         assertEquals(7200, product.getCost());
     }
 
-    @Test
-    void testEquals() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testToString() {
-    }
+//    @Test
+//    void testEquals() {
+//    }
+//
+//    @Test
+//    void testHashCode() {
+//    }
+//
+//    @Test
+//    void testToString() {
+//    }
 }

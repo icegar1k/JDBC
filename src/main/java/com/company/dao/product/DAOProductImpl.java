@@ -125,11 +125,11 @@ public class DAOProductImpl extends DBWorker implements DAOProduct {
 
         try {
             preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
-            preparedStatement.setInt(1, product.getIdProduct());
-            preparedStatement.setString(2, product.getName());
-            preparedStatement.setString(3, product.getModel());
-            preparedStatement.setString(4, product.getDescription());
-            preparedStatement.setInt(5, product.getCost());
+            preparedStatement.setString(1, product.getName());
+            preparedStatement.setString(2, product.getModel());
+            preparedStatement.setString(3, product.getDescription());
+            preparedStatement.setInt(4, product.getCost());
+            preparedStatement.setInt(5, product.getIdProduct());
 
             preparedStatement.executeUpdate();
         }

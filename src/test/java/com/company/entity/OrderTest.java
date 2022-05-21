@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 //import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
@@ -33,18 +33,18 @@ class OrderTest {
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setIdOrder(1);
-        assertEquals(6, order.getIdOrder());
-    }
-
-    @Test
-    void testSetIdOrderIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(0, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
-        order.setIdOrder(1);
         assertEquals(1, order.getIdOrder());
     }
+
+//    @Test
+//    void testSetIdOrderIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(0, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+//        order.setIdOrder(1);
+//        assertEquals(1, order.getIdOrder());
+//    }
 
     @Test
     void testGetIdUser() {
@@ -62,18 +62,18 @@ class OrderTest {
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setIdUser(1);
-        assertEquals(6, order.getIdUser());
-    }
-
-    @Test
-    void testSetIdUserIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 0, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
-        order.setIdUser(1);
         assertEquals(1, order.getIdUser());
     }
+
+//    @Test
+//    void testSetIdUserIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(6, 0, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+//        order.setIdUser(1);
+//        assertEquals(1, order.getIdUser());
+//    }
 
     @Test
     void testGetIdProduct() {
@@ -91,18 +91,18 @@ class OrderTest {
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setIdProduct(1);
-        assertEquals(6, order.getIdProduct());
-    }
-
-    @Test
-    void testSetIdProductIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 0, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
-        order.setIdProduct(1);
         assertEquals(1, order.getIdProduct());
     }
+
+//    @Test
+//    void testSetIdProductIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(6, 6, 0, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+//        order.setIdProduct(1);
+//        assertEquals(1, order.getIdProduct());
+//    }
 
     @Test
     void testGetIndex() {
@@ -120,18 +120,18 @@ class OrderTest {
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setIndex(1);
-        assertEquals(6, order.getIndex());
-    }
-
-    @Test
-    void testSetIndexIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 6, 0, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
-        order.setIndex(1);
         assertEquals(1, order.getIndex());
     }
+
+//    @Test
+//    void testSetIndexIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(6, 6, 6, 0, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+//        order.setIndex(1);
+//        assertEquals(1, order.getIndex());
+//    }
 
     @Test
     void testGetDateTime() {
@@ -149,18 +149,18 @@ class OrderTest {
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setDateTime("2022-04-09 03:25:00");
-        assertEquals("2022-04-16 06:40:00", order.getDateTime());
-    }
-
-    @Test
-    void testSetDateTimeIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 6, 6, null, "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
-        order.setDateTime("2022-04-09 03:25:00");
         assertEquals("2022-04-09 03:25:00", order.getDateTime());
     }
+
+//    @Test
+//    void testSetDateTimeIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(6, 6, 6, 6, null, "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
+//        order.setDateTime("2022-04-09 03:25:00");
+//        assertEquals("2022-04-09 03:25:00", order.getDateTime());
+//    }
 
     @Test
     void testGetDeliveryAddress() {
@@ -178,18 +178,18 @@ class OrderTest {
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setDeliveryAddress("Odessa, Primorskiy");
-        assertEquals("Odessa, Texas", order.getDeliveryAddress());
-    }
-
-    @Test
-    void testSetDeliveryAddressIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", null, 10000, "Rejected", "Hello, Moto!");
-        order.setDeliveryAddress("Odessa, Primorskiy");
         assertEquals("Odessa, Primorskiy", order.getDeliveryAddress());
     }
+
+//    @Test
+//    void testSetDeliveryAddressIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", null, 10000, "Rejected", "Hello, Moto!");
+//        order.setDeliveryAddress("Odessa, Primorskiy");
+//        assertEquals("Odessa, Primorskiy", order.getDeliveryAddress());
+//    }
 
     @Test
     void testGetAmount() {
@@ -201,24 +201,24 @@ class OrderTest {
     }
 
     @Test
-    void testDetAmount() {
+    void testSetAmount() {
         LocalDateTime dt1 = LocalDateTime.now();
         LocalDateTime dt2 = LocalDateTime.now();
         logger.info("TEST {} {}", dt1, dt2);
         Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 10000, "Rejected", "Hello, Moto!");
         order.setAmount(7200);
-        assertEquals(10000, order.getAmount());
-    }
-
-    @Test
-    void testSetAmountIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 0, "Rejected", "Hello, Moto!");
-        order.setAmount(7200);
         assertEquals(7200, order.getAmount());
     }
+
+//    @Test
+//    void testSetAmountIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        Order order = new Order(6, 6, 6, 6, "2022-04-16 06:40:00", "Odessa, Texas", 0, "Rejected", "Hello, Moto!");
+//        order.setAmount(7200);
+//        assertEquals(7200, order.getAmount());
+//    }
 
     @Test
     void testGetStatus() {
@@ -258,15 +258,15 @@ class OrderTest {
         assertEquals("Hi! I wanna buy a guitar!", order.getReview());
     }
 
-    @Test
-    void testEquals() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testToString() {
-    }
+//    @Test
+//    void testEquals() {
+//    }
+//
+//    @Test
+//    void testHashCode() {
+//    }
+//
+//    @Test
+//    void testToString() {
+//    }
 }

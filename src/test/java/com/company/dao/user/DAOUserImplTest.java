@@ -10,23 +10,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class DAOUserImplTest {
 
     DAOUserImpl daoUserImpl = new DAOUserImpl();
-    User testVladimir = new User("TestVladimir", "Zelenskiy", "zelya1978", "Online", "1978-01-25 00:00:00", "2019-05-20 12:00:00", 100500);
+    User testNewUser = new User("Vladolf ", "Putler ", "putya1952", "Offline", "1952-10-07 00:00:00", "2022-02-24 04:00:00", 0);
     List<User> testUsers = daoUserImpl.getAllUsers();
     User testUser = testUsers.get(testUsers.size()-1);
-    User testUpdateVladimir = new User("TestUpdateVladimir", "TestUpdateZelenskiy", "TestUpdateZelya1978", "TestUpdateOnline", "2008-01-25 00:00:00", "2022-05-20 12:00:00", 5100500);
 
     @Order(1)
     @Test
     void testAddUser() {
-        daoUserImpl.addUser(testVladimir);
+        System.out.println("BeforeAdd");
+        System.out.println(testNewUser);
+        daoUserImpl.addUser(testNewUser);
         testUsers = daoUserImpl.getAllUsers();
-        assertTrue(testUsers.contains(testVladimir));
+        testNewUser = testUsers.get(testUsers.size()-1);
+        System.out.println("AfterAdd");
+        System.out.println(testNewUser);
+        assertTrue(testUsers.contains(testNewUser));
     }
 
     @Order(2)
     @Test
     void testGetAllUsers() {
-        assertTrue(testUsers.contains(testVladimir));
+        assertTrue(testUsers.contains(testNewUser));
         }
 
     @Order(3)
@@ -38,16 +42,21 @@ class DAOUserImplTest {
     @Order(4)
     @Test
     void testUpdateUser() {
-        daoUserImpl.updateUser(testVladimir);
-        testUsers = daoUserImpl.getAllUsers();
-        assertTrue(testUsers.contains(testVladimir));
+        testNewUser = testUsers.get(testUsers.size()-1);
+        System.out.println("testUpdate");
+        testNewUser.setName("Updated");
+        System.out.println(testNewUser);
+        daoUserImpl.updateUser(testNewUser);
+        System.out.println(daoUserImpl.getByIdUser(testNewUser.getIdUser()));
+        assertEquals(testNewUser, daoUserImpl.getByIdUser(testNewUser.getIdUser()));
     }
 
     @Order(5)
     @Test
     void testDeleteUser() {
-        daoUserImpl.deleteUser(testUser.getIdUser());
+        testNewUser = testUsers.get(testUsers.size()-1);
+        daoUserImpl.deleteUser(testNewUser.getIdUser());
         testUsers = daoUserImpl.getAllUsers();
-        assertFalse(testUsers.contains(testVladimir));
+        assertFalse(testUsers.contains(testNewUser));
     }
   }

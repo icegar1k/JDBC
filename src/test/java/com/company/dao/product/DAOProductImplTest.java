@@ -15,23 +15,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class DAOProductImplTest {
 
     DAOProductImpl daoProductImpl = new DAOProductImpl();
-    Product testVladimir = new Product("TestFender", "CD-60 V3 WN SUNBURST", "Acoustic", 7200);
+    Product testNewProduct = new Product("Takamine", "GD30CE BLK", "Electric-acoustic", 16830);
     List<Product> testProducts = daoProductImpl.getAllProducts();
     Product testProduct = testProducts.get(testProducts.size()-1);
-    Product testUpdateVladimir = new Product("TestFender", "CD-60 V3 WN SUNBURST", "Acoustic", 7200);
 
     @Order(1)
     @Test
     void testAddProduct() {
-        daoProductImpl.addProduct(testVladimir);
+        System.out.println("BeforeAdd");
+        System.out.println(testNewProduct);
+        daoProductImpl.addProduct(testNewProduct);
         testProducts = daoProductImpl.getAllProducts();
-        assertTrue(testProducts.contains(testVladimir));
+        testNewProduct = testProducts.get(testProducts.size()-1);
+        System.out.println("AfterAdd");
+        System.out.println(testNewProduct);
+        assertTrue(testProducts.contains(testNewProduct));
     }
 
     @Order(2)
     @Test
     void testGetAllProducts() {
-        assertTrue(testProducts.contains(testVladimir));
+        assertTrue(testProducts.contains(testNewProduct));
     }
 
     @Order(3)
@@ -43,16 +47,21 @@ class DAOProductImplTest {
     @Order(4)
     @Test
     void testUpdateProduct() {
-        daoProductImpl.updateProduct(testVladimir);
-        testProducts = daoProductImpl.getAllProducts();
-        assertTrue(testProducts.contains(testVladimir));
+        testNewProduct = testProducts.get(testProducts.size()-1);
+        System.out.println("testUpdate");
+        testNewProduct.setName("Updated");
+        System.out.println(testNewProduct);
+        daoProductImpl.updateProduct(testNewProduct);
+        System.out.println(daoProductImpl.getByIdProduct(testNewProduct.getIdProduct()));
+        assertEquals(testNewProduct, daoProductImpl.getByIdProduct(testNewProduct.getIdProduct()));
     }
 
     @Order(5)
     @Test
     void testDeleteProduct() {
-        daoProductImpl.deleteProduct(testProduct.getIdProduct());
+        testNewProduct = testProducts.get(testProducts.size()-1);
+        daoProductImpl.deleteProduct(testNewProduct.getIdProduct());
         testProducts = daoProductImpl.getAllProducts();
-        assertFalse(testProducts.contains(testVladimir));
+        assertFalse(testProducts.contains(testNewProduct));
     }
 }

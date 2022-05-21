@@ -15,28 +15,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class DAOShoppingCartImplTest {
 
     DAOShoppingCartImpl daoShoppingCartImpl = new DAOShoppingCartImpl();
-    ShoppingCart testVladimir = new ShoppingCart(5, 4, "Fender CD-60 V3 WN SUNBURST", "ABC007", 7200, 1, 7200);
+    ShoppingCart testNewShoppingCart = new ShoppingCart(4, 5, "Ibanez RG370AHMZ BMT", "ABC005", 16800, 6, 100800);
     List<ShoppingCart> testShoppingCarts = daoShoppingCartImpl.getAllShoppingCarts();
     ShoppingCart testShoppingCart = testShoppingCarts.get(testShoppingCarts.size()-1);
-    ShoppingCart testUpdateVladimir = new ShoppingCart(4, 5, "Fender CD-60 V3 WN SUNBURST", "ABC008", 7200, 1, 7200);
 
     @Order(1)
     @Test
     void testAddShoppingCart() {
         System.out.println("BeforeAdd");
-        System.out.println(testVladimir);
-        daoShoppingCartImpl.addShoppingCart(testVladimir);
+        System.out.println(testNewShoppingCart);
+        daoShoppingCartImpl.addShoppingCart(testNewShoppingCart);
         testShoppingCarts = daoShoppingCartImpl.getAllShoppingCarts();
-        testVladimir = testShoppingCarts.get(testShoppingCarts.size()-1);
+        testNewShoppingCart = testShoppingCarts.get(testShoppingCarts.size()-1);
         System.out.println("AfterAdd");
-        System.out.println(testVladimir);
-        assertTrue(testShoppingCarts.contains(testVladimir));
+        System.out.println(testNewShoppingCart);
+        assertTrue(testShoppingCarts.contains(testNewShoppingCart));
     }
 
     @Order(2)
     @Test
     void testGetAllShoppingCarts() {
-        assertTrue(testShoppingCarts.contains(testVladimir));
+        assertTrue(testShoppingCarts.contains(testNewShoppingCart));
     }
 
     @Order(3)
@@ -48,21 +47,21 @@ class DAOShoppingCartImplTest {
     @Order(4)
     @Test
     void testUpdateShoppingCart() {
-        testVladimir = testShoppingCarts.get(testShoppingCarts.size()-1);
+        testNewShoppingCart = testShoppingCarts.get(testShoppingCarts.size()-1);
         System.out.println("testUpdate");
-        testVladimir.setName("Updated");
-        System.out.println(testVladimir);
-        daoShoppingCartImpl.updateShoppingCart(testVladimir);
-        System.out.println(daoShoppingCartImpl.getByIdShoppingCart(testVladimir.getIdShoppingCart()));
-        assertEquals(testVladimir, daoShoppingCartImpl.getByIdShoppingCart(testVladimir.getIdShoppingCart()));
+        testNewShoppingCart.setName("Updated");
+        System.out.println(testNewShoppingCart);
+        daoShoppingCartImpl.updateShoppingCart(testNewShoppingCart);
+        System.out.println(daoShoppingCartImpl.getByIdShoppingCart(testNewShoppingCart.getIdShoppingCart()));
+        assertEquals(testNewShoppingCart, daoShoppingCartImpl.getByIdShoppingCart(testNewShoppingCart.getIdShoppingCart()));
     }
 
     @Order(5)
     @Test
     void testDeleteShoppingCart() {
-        testVladimir = testShoppingCarts.get(testShoppingCarts.size()-1);
-        daoShoppingCartImpl.deleteShoppingCart(testVladimir.getIdShoppingCart());
+        testNewShoppingCart = testShoppingCarts.get(testShoppingCarts.size()-1);
+        daoShoppingCartImpl.deleteShoppingCart(testNewShoppingCart.getIdShoppingCart());
         testShoppingCarts = daoShoppingCartImpl.getAllShoppingCarts();
-        assertFalse(testShoppingCarts.contains(testVladimir));
+        assertFalse(testShoppingCarts.contains(testNewShoppingCart));
     }
 }

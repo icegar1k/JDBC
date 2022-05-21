@@ -136,14 +136,14 @@ public class DAOUserImpl extends DBWorker implements DAOUser {
 
         try {
             preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
-            preparedStatement.setInt(1, user.getIdUser());
-            preparedStatement.setString(2, user.getName());
-            preparedStatement.setString(3, user.getSurname());
-            preparedStatement.setString(4, user.getLogin());
-            preparedStatement.setString(5, user.getStatus());
-            preparedStatement.setString(6, user.getRegistrationDateTime());
-            preparedStatement.setString(7, user.getLastOrderDateTime());
-            preparedStatement.setInt(8, user.getIndexOfProductsPurchased());
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getSurname());
+            preparedStatement.setString(3, user.getLogin());
+            preparedStatement.setString(4, user.getStatus());
+            preparedStatement.setString(5, user.getRegistrationDateTime());
+            preparedStatement.setString(6, user.getLastOrderDateTime());
+            preparedStatement.setInt(7, user.getIndexOfProductsPurchased());
+            preparedStatement.setInt(8, user.getIdUser());
 
             preparedStatement.executeUpdate();
         }

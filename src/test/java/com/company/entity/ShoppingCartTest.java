@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 //import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
@@ -30,18 +30,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setIdShoppingCart(1);
-        assertEquals(6, shoppingCart.getIdShoppingCart());
-    }
-
-    @Test
-    void setIdShoppingCartIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(0, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
-        shoppingCart.setIdShoppingCart(1);
         assertEquals(1, shoppingCart.getIdShoppingCart());
     }
+
+//    @Test
+//    void setIdShoppingCartIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(0, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
+//        shoppingCart.setIdShoppingCart(1);
+//        assertEquals(1, shoppingCart.getIdShoppingCart());
+//    }
 
     @Test
     void getIdUser() {
@@ -59,18 +59,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setIdUser(1);
-        assertEquals(6, shoppingCart.getIdUser());
-    }
-
-    @Test
-    void setIdUserIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 0, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
-        shoppingCart.setIdUser(1);
         assertEquals(1, shoppingCart.getIdUser());
     }
+
+//    @Test
+//    void setIdUserIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 0, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
+//        shoppingCart.setIdUser(1);
+//        assertEquals(1, shoppingCart.getIdUser());
+//    }
 
     @Test
     void getIdProduct() {
@@ -88,18 +88,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setIdProduct(1);
-        assertEquals(6, shoppingCart.getIdProduct());
-    }
-
-    @Test
-    void setIdProductIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 0, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
-        shoppingCart.setIdProduct(1);
         assertEquals(1, shoppingCart.getIdProduct());
     }
+
+//    @Test
+//    void setIdProductIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 0, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
+//        shoppingCart.setIdProduct(1);
+//        assertEquals(1, shoppingCart.getIdProduct());
+//    }
 
     @Test
     void getName() {
@@ -117,18 +117,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setName("Fender CD-60 V3 WN SUNBURST");
-        assertEquals("Ibanez GRGR221PA AQB", shoppingCart.getName());
-    }
-
-    @Test
-    void setNameIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, null, "ABC006", 10656, 6, 63936);
-        shoppingCart.setName("Fender CD-60 V3 WN SUNBURST");
         assertEquals("Fender CD-60 V3 WN SUNBURST", shoppingCart.getName());
     }
+
+//    @Test
+//    void setNameIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, null, "ABC006", 10656, 6, 63936);
+//        shoppingCart.setName("Fender CD-60 V3 WN SUNBURST");
+//        assertEquals("Fender CD-60 V3 WN SUNBURST", shoppingCart.getName());
+//    }
 
     @Test
     void getCode() {
@@ -146,18 +146,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setCode("ABC001");
-        assertEquals("ABC006", shoppingCart.getCode());
-    }
-
-    @Test
-    void setCodeIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", null, 10656, 6, 63936);
-        shoppingCart.setCode("ABC001");
         assertEquals("ABC001", shoppingCart.getCode());
     }
+
+//    @Test
+//    void setCodeIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", null, 10656, 6, 63936);
+//        shoppingCart.setCode("ABC001");
+//        assertEquals("ABC001", shoppingCart.getCode());
+//    }
 
     @Test
     void getPrice() {
@@ -175,18 +175,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setPrice(7200);
-        assertEquals(10656, shoppingCart.getPrice());
-    }
-
-    @Test
-    void setPriceIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 0, 6, 63936);
-        shoppingCart.setPrice(7200);
         assertEquals(7200, shoppingCart.getPrice());
     }
+
+//    @Test
+//    void setPriceIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 0, 6, 63936);
+//        shoppingCart.setPrice(7200);
+//        assertEquals(7200, shoppingCart.getPrice());
+//    }
 
     @Test
     void getQuantity() {
@@ -204,18 +204,18 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setQuantity(1);
-        assertEquals(6, shoppingCart.getQuantity());
-    }
-
-    @Test
-    void setQuantityIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 0, 63936);
-        shoppingCart.setQuantity(1);
         assertEquals(1, shoppingCart.getQuantity());
     }
+
+//    @Test
+//    void setQuantityIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 0, 63936);
+//        shoppingCart.setQuantity(1);
+//        assertEquals(1, shoppingCart.getQuantity());
+//    }
 
     @Test
     void getAmount() {
@@ -233,28 +233,28 @@ class ShoppingCartTest {
         logger.info("TEST {} {}", dt1, dt2);
         ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 63936);
         shoppingCart.setAmount(7200);
-        assertEquals(63936, shoppingCart.getAmount());
-    }
-
-    @Test
-    void setAmountIfEmpty() {
-        LocalDateTime dt1 = LocalDateTime.now();
-        LocalDateTime dt2 = LocalDateTime.now();
-        logger.info("TEST {} {}", dt1, dt2);
-        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 0);
-        shoppingCart.setAmount(7200);
         assertEquals(7200, shoppingCart.getAmount());
     }
 
-    @Test
-    void testEquals() {
-    }
+//    @Test
+//    void setAmountIfEmpty() {
+//        LocalDateTime dt1 = LocalDateTime.now();
+//        LocalDateTime dt2 = LocalDateTime.now();
+//        logger.info("TEST {} {}", dt1, dt2);
+//        ShoppingCart shoppingCart = new ShoppingCart(6, 6, 6, "Ibanez GRGR221PA AQB", "ABC006", 10656, 6, 0);
+//        shoppingCart.setAmount(7200);
+//        assertEquals(7200, shoppingCart.getAmount());
+//    }
 
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testToString() {
-    }
+//    @Test
+//    void testEquals() {
+//    }
+//
+//    @Test
+//    void testHashCode() {
+//    }
+//
+//    @Test
+//    void testToString() {
+//    }
 }
